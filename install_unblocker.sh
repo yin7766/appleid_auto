@@ -11,7 +11,7 @@ echo -e "${YELLOW}Please note that the language you choose will affect the outpu
 echo -e "请注意，你选择的语言将影响后端程序的输出${PLAIN}"
 echo -e "${BLUE}However no support for language other than Chinese and English is provided in this installation script${PLAIN}"
 echo -e "${BLUE}但是本安装脚本仅提供中文和英文支持${PLAIN}"
-echo "1.简体中文(zh_cn)"
+echo "1.简体中文hahah(zh_cn)"
 echo "2.English(en_us)"
 echo "3.Vietnamese(vi_vn)"
 read -e language
