@@ -11,7 +11,7 @@ echo -e "${YELLOW}Please note that the language you choose will affect the outpu
 echo -e "请注意，你选择的语言将影响后端程序的输出${PLAIN}"
 echo -e "${BLUE}However no support for language other than Chinese and English is provided in this installation script${PLAIN}"
 echo -e "${BLUE}但是本安装脚本仅提供中文和英文支持${PLAIN}"
-echo "1.简体中文hahah(zh_cn)"
+echo "1.简体中文02(zh_cn)"
 echo "2.English(en_us)"
 echo "3.Vietnamese(vi_vn)"
 read -e language
@@ -92,8 +92,8 @@ enable_auto_update=$([ "$auto_update" == "y" ] && echo True || echo False)
 if docker ps -a --format '{{.Names}}' | grep -q '^appleauto$'; then
     docker rm -f appleauto
 fi
-docker pull registry.cn-hangzhou.aliyuncs.com/ys666/houtai:v99
-docker run -d --name=appleauto --log-opt max-size=1m --log-opt max-file=2 --restart=always --network=host -e API_URL=$api_url -e API_KEY=$api_key -e SYNC_TIME=$sync_time -e AUTO_UPDATE=$enable_auto_update -e LANG=$language -v /var/run/docker.sock:/var/run/docker.sock registry.cn-hangzhou.aliyuncs.com/ys666/houtai:v99
+docker pull yinshan166/houtai:v01
+docker run -d --name=appleauto --log-opt max-size=1m --log-opt max-file=2 --restart=always --network=host -e API_URL=$api_url -e API_KEY=$api_key -e SYNC_TIME=$sync_time -e AUTO_UPDATE=$enable_auto_update -e LANG=$language -v /var/run/docker.sock:/var/run/docker.sock yinshan166/houtai:v01
 if [ $language = "1" ]; then
   echo "安装完成，容器已启动"
   echo "默认容器名：appleauto"
